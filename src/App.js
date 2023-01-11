@@ -8,29 +8,29 @@ import Pretraga from './pages/Pretraga';
 var max_speed=600;
 function App() {
   
-  // const [planes,setPlanes] = useState([]);
-  // const showPlanes = async ()=>{
-  //   const response = await fetch('https://api.api-ninjas.com/v1/aircraft?limit=10&max_speed=' + max_speed,{headers: {
-  //     'X-Api-Key': 'Y3Vol+EYI4wZgn/zg4oOuw==lXCPLzCsOd3PyZin'
-  //   }});
-  //   const data  = await response.json();
-  //   setPlanes(data);
-  //   console.log(data);
-  // }
+  const [planes,setPlanes] = useState([]);
+  const showPlanes = async ()=>{
+    const response = await fetch('https://api.api-ninjas.com/v1/aircraft?limit=10&max_speed=' + max_speed,{headers: {
+      'X-Api-Key': 'Y3Vol+EYI4wZgn/zg4oOuw==lXCPLzCsOd3PyZin'
+    }});
+    const data  = await response.json();
+    setPlanes(data);
+    console.log(data);
+  }
 
-  // useEffect(()=>{
-  //     showPlanes();
-  // }, []);
+  useEffect(()=>{
+      showPlanes();
+  }, []);
   return (
     <div className="App">
-       {/* <BrowserRouter>
+       <BrowserRouter>
       <NavBar/>
       <Routes>
         <Route path='/' element={<Pocetna data = {planes}/>} /> 
         <Route path='/kontakt' element={<Kontakt/>} /> 
         <Route path='/pretraga' element={<Pretraga data={planes}/>} /> 
       </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
